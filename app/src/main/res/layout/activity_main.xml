@@ -231,8 +231,8 @@
 
     <TextView
         android:id="@+id/textControl"
-        android:layout_width="437dp"
-        android:layout_height="54dp"
+        android:layout_width="403dp"
+        android:layout_height="59dp"
         android:layout_marginStart="3dp"
         android:layout_marginLeft="3dp"
         android:layout_marginTop="268dp"
@@ -242,8 +242,8 @@
 
     <TextView
         android:id="@+id/textResult"
-        android:layout_width="438dp"
-        android:layout_height="53dp"
+        android:layout_width="402dp"
+        android:layout_height="55dp"
         android:layout_marginStart="2dp"
         android:layout_marginLeft="2dp"
         android:layout_marginTop="199dp"

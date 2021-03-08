@@ -197,27 +197,27 @@ public class MainActivity extends AppCompatActivity {
         square.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                compute();
                 ACTION = SQUARE;
-                result.setText(String.valueOf(val1) + " squared");
+                computeStrange();
+                result.setText(String.valueOf(val1) + " squared is: " + String.valueOf(val2));
                 control.setText(null);
             }
         });
         cube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                compute();
+                computeStrange();
                 ACTION = CUBE;
-                result.setText(String.valueOf(val1) + " cubed");
+                result.setText(String.valueOf(val1) + " cubed is: " + String.valueOf(val2));
                 control.setText(null);
             }
         });
         root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                compute();
+                computeStrange();
                 ACTION = ROOT;
-                result.setText(String.valueOf(val1) + "√");
+                result.setText(String.valueOf(val1) + "√ is: " + String.valueOf(val2));
                 control.setText(null);
             }
         });
@@ -277,32 +277,28 @@ public class MainActivity extends AppCompatActivity {
                 case DIVISION:
                     val1 = val1/val2;
                     break;
-
-                case EQUAL:
-                    break;
             }
 
         }
         else
         {
             val1 = Double.parseDouble(control.getText().toString());
-            if(ACTION == SQUARE || ACTION == ROOT || ACTION == CUBE||ACTION == EQUAL)
+        }
+        }
+        private void computeStrange()
+        {
+            val1 = Double.parseDouble(control.getText().toString());
+            switch(ACTION)
             {
-                switch (ACTION)
-                {
-                    case SQUARE:
-                        val1 = val1 * val1;
-                        break;
-                    case CUBE:
-                        val1 = val1 * val1 * val1;
-                        break;
-                    case ROOT:
-                        val1 = Math.sqrt(val1);
-                        break;
-                    case EQUAL:
-                        break;
-                }
-                }
+                case SQUARE:
+                    val2 = val1 * val1;
+                    break;
+                case CUBE:
+                    val2 = val1 * val1 * val1;
+                    break;
+                case ROOT:
+                    val2 = Math.sqrt(val1);
+                    break;
             }
         }
     }
